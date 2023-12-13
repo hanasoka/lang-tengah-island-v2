@@ -12,33 +12,45 @@
         width: 100%;
         object-fit: cover;
       }
+
+      h1 {
+        color: #000033;
+      }
+
+      h2 {
+        color: #228B22;
+      }
+
+      p {
+        color: #708090;
+      }
     </style>
-    
   </head>
   <body>
     <div class="container">
       <h1 class="text-center mt-2 mb-4">
-        Lang Tengah Island
+        {{name}}
       </h1>
       <img class="img-fluid" id="banner" src="{{url_for('static', filename='banner.jpg')}}">
       <h2 class="text-center mt-2 mb-4">
-        Let's Go to Lang Tengah Island!
+        Let's Go to {{name}}!
       </h2>
       <p class="lead">
-        Hey there! Welcome to Lang Tengah Island Adventures – your ticket to tropical paradise smack in the middle of the South China Sea. Get ready for some serious good times as you soak up the beauty of this hidden gem where the water is so clear, and the beaches are like postcards. Our website is like your personal guide to awesome Day Trips, mixing adventure with chill vibes as you explore lush landscapes and kick back on those dreamy sandy shores. And if you're up for some underwater fun, our Snorkeling Trips are the bomb, giving you a front-row seat to the wild and colorful world beneath the waves. Lang Tengah Island Adventures is all about creating memories that stick, no matter if you're a thrill-seeker, nature lover, or just looking to unwind. Join us on this laid-back journey where every moment is a high-five to the incredible beauty of Lang Tengah. Book your spot now and let the good times roll! 🌴🐠✨
-      </p>
-      <h2 class="text-center mt-2 mb-4">
+        Hey there! Welcome to {{name}} Adventures – your ticket to tropical paradise smack in the middle of the South China Sea. Get ready for some serious good times as you soak up the beauty of this hidden gem where the water is so clear, and the beaches are like postcards. Our website is like your personal guide to awesome Day Trips, mixing adventure with chill vibes as you explore lush landscapes and kick back on those dreamy sandy shores. And if you're up for some underwater fun, our Snorkeling Trips are the bomb, giving you a front-row seat to the wild and colorful world beneath the waves. Lang Tengah Island Adventures is all about creating memories that stick, no matter if you're a thrill-seeker, nature lover, or just looking to unwind. Join us on this laid-back journey where every moment is a high-five to the incredible beauty of Lang Tengah. Book your spot now and let the good times roll! 🌴🐠✨
+      <h2 class="text-center mt-2 mb-16">
         Book a Tour
       </h2>
-      <p>
-        To do list of tour here
-      </p>
+      <div>
+        {% for tour in tours %}
+          {% include 'touritem.html' %}
+        {% endfor %}
+      </div>
       <div class="text-center">
         <button type="button" class="btn btn-primary btn-lg">
           Contact
         </button>
         <p class="mt-4">
-          Copyright 2023, Lang Tengah Island
+          Copyright 2023, {{name}}
         </p>
       </div>
     </div>
