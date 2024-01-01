@@ -11,6 +11,7 @@
         height: 360px;
         width: 100%;
         object-fit: cover;
+        margin-bottom: 16px;
       }
 
       h1 {
@@ -27,16 +28,22 @@
     </style>
   </head>
   <body>
+    {% include 'nav.html' %}
+     <img class="img-fluid" id="banner" src="{{url_for('static', filename='banner.jpg')}}">
     <div class="container">
       <h1 class="text-center mt-2 mb-4">
         {{name}}
       </h1>
-      <img class="img-fluid" id="banner" src="{{url_for('static', filename='banner.jpg')}}">
-      <h2 class="text-center mt-2 mb-4">
-        Let's Go to {{name}}!
-      </h2>
-      <p class="lead">
+      <div class='row' style="margin-bottom:16px;">
+        <div class="col-md-7">
+          <p class="lead">
         Hey there! Welcome to {{name}} Adventures – your ticket to tropical paradise smack in the middle of the South China Sea. Get ready for some serious good times as you soak up the beauty of this hidden gem where the water is so clear, and the beaches are like postcards. Our website is like your personal guide to awesome Day Trips, mixing adventure with chill vibes as you explore lush landscapes and kick back on those dreamy sandy shores. And if you're up for some underwater fun, our Snorkeling Trips are the bomb, giving you a front-row seat to the wild and colorful world beneath the waves. Lang Tengah Island Adventures is all about creating memories that stick, no matter if you're a thrill-seeker, nature lover, or just looking to unwind. Join us on this laid-back journey where every moment is a high-five to the incredible beauty of Lang Tengah. Book your spot now and let the good times roll! 🌴🐠✨
+          </p>
+        </div>
+        <div class="d-none d-md-block col-md-3">
+          <img src="/static/turtle.jpg" style="height:320px; border-radius:4px;">
+        </div>
+      </div>
       <h2 class="text-center mt-2 mb-16">
         Book a Tour
       </h2>
@@ -46,13 +53,11 @@
         {% endfor %}
       </div>
       <div class="text-center">
-        <button type="button" class="btn btn-primary btn-lg">
+        <a type="button" class="btn btn-primary btn-lg" href="mailto:hanisland@hotmail.com?subject=Inquiry%20for%20%5Bexample%3A%20Redang%20Island%20Package%5D&body=I%20would%20like%20to%20inquire%20about%20%5Bexample%3A%20Redang%20Island%20Package%5D.Could%20you%20please%20provide%20a%20quote%20with%20the%20following%20details%3A%0D%0A%0D%0A-%20Name%3A%20%5BPlease%20enter%20your%20name%5D%0D%0A-%20Travel%20Date%3A%20%5BPlease%20enter%20your%20travel%20date%20or%20Check-in%20%26%20Check-out%20Date%5D%0D%0A-%20Number%20of%20Adults%3A%20%5BPlease%20enter%20the%20number%20of%20adults%5D%0D%0A-%20Number%20of%20Children%20(age%203-11)%3A%20%5BPlease%20enter%20the%20number%20of%20children%5D%0D%0A-%20Number%20of%20Infants%20(age%200-2)%3A%20%5BPlease%20enter%20the%20number%20of%20infants%5D%0D%0A%0D%0AThank%20you!">
           Contact
-        </button>
-        <p class="mt-4">
-          Copyright 2023, {{name}}
-        </p>
+        </a>
       </div>
     </div>
+    {% include 'footer.html' %}
   </body> 
 </html>
