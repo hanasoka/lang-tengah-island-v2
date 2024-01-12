@@ -1,6 +1,6 @@
 from sqlalchemy import create_engine, text 
 
-db_connection_string = "mysql+pymysql://y3n7542zq0m9weeptp74:pscale_pw_pzIxQwS7Li8pAlBln7krxjpK5LqqANA1qdlYDKt8Hnx@aws.connect.psdb.cloud/langtengahisland?charset=utf8mb4"
+db_connection_string = "mysql+pymysql://ptim3oy4g4rip1dmp7iv:pscale_pw_R26spDnwvnuwd8ozW5MI1nobfWWNFIgEJ1Op6BNz7Dx@aws.connect.psdb.cloud/langtengahisland?charset=utf8mb4"
 
 engine = create_engine(db_connection_string, connect_args={
   "ssl": {
@@ -12,17 +12,9 @@ engine = create_engine(db_connection_string, connect_args={
 
 with engine.connect() as conn:
     result = conn.execute(text("select * from tours"))
-    print("type(result):", type(result))
-    
-    result_all = result.all()
-    print("type(result_all):", type(result_all))
-    print("result_all():", result_all)
-  
-    first_result = result_all[0]
-    print("type(first_result):", type(first_result))
-    print("first_result:", first_result)
-  
-    first_result_dict = first_result._asdict()
-    print("type(first_result_dict):", type(first_result_dict))
-    print("first_result_dict:", first_result_dict)
-    
+
+    result_dicts = []
+    for row in result.all():
+        result_dicts.append(row._asdict())
+
+    print(result_dicts)
