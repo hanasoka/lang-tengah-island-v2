@@ -1,4 +1,5 @@
 from flask import Flask, render_template, jsonify 
+from database import engine
 
 app = Flask(__name__)
 
@@ -32,6 +33,12 @@ TOURS = [
   }
 ]
 
+def load_tours_from_db():
+  with engine.connect() as conn:
+    result = conn.execute(text("select * from tours"))
+    result_dicts = []
+    for row in result.all():
+        result_dicts.append(row._asdict())
 
 @app.route("/")
 def hello_world():
