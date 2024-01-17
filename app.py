@@ -13,7 +13,8 @@ def hello_world():
 
 @app.route("/api/tours")
 def list_tour():
-    return jsonify(TOURS)
+    tours_list = load_tours_from_db()
+    return jsonify(tours_list)
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", debug=True)  
