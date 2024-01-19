@@ -17,6 +17,9 @@ def list_tour():
     return jsonify(tours_list)
 
 @app.route("/tour/<id>")
+def show_tour(id):
+    tour = load_tour_from_db(id)
+    return jsonify(tour)
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", debug=True)  
