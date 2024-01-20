@@ -22,9 +22,13 @@ def load_tour_from_db(id):
   with engine.connect() as conn:
     result = conn.execute(text("select * from tours where id = :val"), {"val": id})
     rows = result.all()
-    if lens(rows) == 0:
+    if len(rows) == 0:
       return None
     else:
-      return dict(rows[0])
+      #return dict(rows[0])
+      return rows[0]._asdict()
+
+          
+
 
 

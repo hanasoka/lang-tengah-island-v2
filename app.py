@@ -1,5 +1,5 @@
 from flask import Flask, render_template, jsonify 
-from database import load_tours_from_db
+from database import load_tours_from_db, load_tour_from_db
 
 
 app = Flask(__name__)
@@ -19,7 +19,9 @@ def list_tour():
 @app.route("/tour/<id>")
 def show_tour(id):
     tour = load_tour_from_db(id)
-    return jsonify(tour)
+    if not tour:
+        return "Not Found", 404
+    return render_template("tourpage.html", tour=tour)
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", debug=True)  
