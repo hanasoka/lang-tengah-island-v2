@@ -21,7 +21,9 @@ def show_tour(id):
     tour = load_tour_from_db(id)
     if not tour:
         return "Not Found", 404
-    return render_template("tourpage.html", tour=tour)
+    return render_template("tourpage.html", 
+                           tour=tour, 
+                           name="Experience Lang Tengah")
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", debug=True)  
