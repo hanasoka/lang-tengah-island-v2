@@ -18,9 +18,17 @@
       <h4>Requirements</h4>
       <p>{{tour.requirements}}</p>
       <h4>Package Includes</h4>
-      <p>{{tour.includes}}</p>
+      <ol>
+        {% for line in tour.includes.split("\n") %}
+          <li>{{line}}</li>
+        {% endfor %}
+      </ol>
       <h4>Package Excludes</h4>
-      <p>{{tour.excludes}}</p>
+      <ul>
+        {% for line in tour.excludes.split("\n") %}
+          <li>{{line}}</li>
+        {% endfor %}
+      </ul>
       <h4>Terms & Conditions</h4>
       <p>{{tour.notes}}</p>
     </div>
