@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Booking Submitted</title>
+  </head>
+  <body>
+    <div>
+    <h4>Your booking has been submitted</h4>
+    <p>{{name.title}}</p>
+
+    
+    
+    <h4>Full Name</h4>
+    <div>{{booking.full_name}}</div>
+
+    <h4>Contact Number</h4>
+    <div>{{booking.phone}}</div>
+    
+    <h4>Email</h4>
+    <div>{{booking.email}}</div>
+
+    <h4>Travel Date</h4>
+    <div>{{booking.travel_date}}</div>
+
+    <h4>Number of Adult</h4>
+    <div>{{booking.adult}}</div>
+
+    <h4>Number of Children (Age 3 - 11 years old)</h4>
+    <div>{{booking.child}}</div>
+
+    <h4>Number of Toddler (Age 0 - 2 years old)</h4>
+    <div>{{booking.toddler}}</div>
+    </div>
+    
+    <div class="container">
+      
+      <h3 class="mb-2">{{name.title}}</h3> 
+      <p class="lead mt-0">{{name.info}}</p>
+      <h4>Price Per Person in Malaysian Ringgit (MYR)</h4>
+      <p>{{name.price}}</p>
+      <h4>Requirements</h4>
+      <p>{{name.requirements}}</p>
+      <h4>Package Includes</h4>
+      <ol>
+        {% for line in name.includes.split("\n") %}
+          <li>{{line}}</li>
+        {% endfor %}
+      </ol>
+      <h4>Package Excludes</h4>
+      <ul>
+        {% for line in name.excludes.split("\n") %}
+          <li>{{line}}</li>
+        {% endfor %}
+      </ul>
+      <h4>Terms & Conditions</h4>
+      <p>{{name.notes}}</p>
+
+    </div>
+    
+  </body>
+</html>
