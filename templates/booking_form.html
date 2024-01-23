@@ -1,5 +1,5 @@
 <h4>Booking Form</h4>
-<form action="/tour/{{tour.id}}/book">
+<form action="/tour/{{tour.id}}/book" method="post">
   <div class="mb-2">
     <label for="full_name">Full Name</label><br>
     <input type="text" id="full_name" name="full_name" placeholder="Your name">
@@ -26,7 +26,7 @@
   </div>
 
   <div class="mb-2">
-    <label for="child">Number of Child (Age 3 - 11 years old)</label><br>
+    <label for="child">Number of Children (Age 3 - 11 years old)</label><br>
     <input type="text" id="child" name="child" placeholder="How many child?">
   </div>
 
@@ -36,7 +36,7 @@
   </div>
 
   <div class="mb-2">
-    <input type="submit" name="submit">
+    <input type="submit">
   </div>
   
 </form>
