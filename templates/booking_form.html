@@ -1,0 +1,42 @@
+<h4>Booking Form</h4>
+<form action="/tour/{{tour.id}}/book">
+  <div class="mb-2">
+    <label for="full_name">Full Name</label><br>
+    <input type="text" id="full_name" name="full_name" placeholder="Your name">
+  </div>
+
+  <div class="mb-2">
+    <label for="phone">Phone</label><br>
+    <input type="text" id="phone" name="phone" placeholder="Your contact number">
+  </div>
+
+  <div class="mb-2">
+    <label for="email">Email</label><br>
+    <input type="text" id="email" name="email" placeholder="Your email address">
+  </div>
+  
+  <div class="mb-2">
+    <label for="travel_date">Travel Date</label><br>
+    <input type="date" id="travel_date" name="travel_date" placeholder="Travel Date">
+  </div>
+
+  <div class="mb-2">
+    <label for="adult">Number of Adult</label><br>
+    <input type="text" id="adult" name="adult" placeholder="How many adult?">
+  </div>
+
+  <div class="mb-2">
+    <label for="child">Number of Child (Age 3 - 11 years old)</label><br>
+    <input type="text" id="child" name="child" placeholder="How many child?">
+  </div>
+
+  <div class="mb-2">
+    <label for="toddler">Number of Toddler (Age 0 - 2 years old)</label><br>
+    <input type="text" id="toddler" name="toddler" placeholder="How many toddler?">
+  </div>
+
+  <div class="mb-2">
+    <input type="submit" name="submit">
+  </div>
+  
+</form>
