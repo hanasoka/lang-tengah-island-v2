@@ -31,11 +31,13 @@ def show_tour(id):
 @app.route("/tour/<id>/book", methods=["post"])
 def book_tour(id):
   data = request.form
-  tour = load_tour_from_db(id)
+  name = load_tour_from_db(id)
   # store this is DB
   # send an email
   # display an acknowledgement
-  return render_template("booking_submitted.html", booking=data, name=tour)
+  return render_template("booking_submitted.html", 
+                         booking=data, 
+                         name=name)
 
 
 if __name__ == "__main__":

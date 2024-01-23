@@ -2,60 +2,73 @@
 <html>
   <head>
     <title>Booking Submitted</title>
+    {% include "bootstrap.html" %}
+    
   </head>
   <body>
-    <div>
-    <h4>Your booking has been submitted</h4>
-    <p>{{name.title}}</p>
-
-    
-    
-    <h4>Full Name</h4>
-    <div>{{booking.full_name}}</div>
-
-    <h4>Contact Number</h4>
-    <div>{{booking.phone}}</div>
-    
-    <h4>Email</h4>
-    <div>{{booking.email}}</div>
-
-    <h4>Travel Date</h4>
-    <div>{{booking.travel_date}}</div>
-
-    <h4>Number of Adult</h4>
-    <div>{{booking.adult}}</div>
-
-    <h4>Number of Children (Age 3 - 11 years old)</h4>
-    <div>{{booking.child}}</div>
-
-    <h4>Number of Toddler (Age 0 - 2 years old)</h4>
-    <div>{{booking.toddler}}</div>
-    </div>
-    
+    {% include 'nav.html' %}
+    {% include 'banner.html' %}
     <div class="container">
+      <div>
+      <h4>Your booking request has been submitted</h4>
+      <p>We will get back to you soon.</p>
+      </div>
       
-      <h3 class="mb-2">{{name.title}}</h3> 
-      <p class="lead mt-0">{{name.info}}</p>
-      <h4>Price Per Person in Malaysian Ringgit (MYR)</h4>
-      <p>{{name.price}}</p>
-      <h4>Requirements</h4>
-      <p>{{name.requirements}}</p>
-      <h4>Package Includes</h4>
-      <ol>
-        {% for line in name.includes.split("\n") %}
-          <li>{{line}}</li>
-        {% endfor %}
-      </ol>
-      <h4>Package Excludes</h4>
-      <ul>
-        {% for line in name.excludes.split("\n") %}
-          <li>{{line}}</li>
-        {% endfor %}
-      </ul>
-      <h4>Terms & Conditions</h4>
-      <p>{{name.notes}}</p>
+      <b>Package Name</b>
+      <div class="mb-2">{{name.title}}</div>
+      
+      <b>Full Name</b>
+      <div class="mb-2">{{booking.full_name}}</div>
+      
+      <b>Contact Number</b>
+      <div class="mb-2">{{booking.phone}}</div>
+    
+      <b>Email</b>b
+      <div class="mb-2">{{booking.email}}</div>
+
+      <b>Travel Date</b>
+      <div class="mb-2">{{booking.travel_date}}</div>
+
+      <b>Number of Adult</b>
+      <div class="mb-2">{{booking.adult}}</div>
+
+      <b>Number of Children (Age 3 - 11 years old)</b>
+      <div class="mb-2">{{booking.child}}</div>
+
+      <b>Number of Toddler (Age 0 - 2 years old)</b>
+      <div class="mb-2">{{booking.toddler}}</div>
+
+      <b>Package / Trip Information</b>
+      <div class="mb-2">{{name.info}}</div>
+      
+      <b>Price Per Person in Malaysian Ringgit (MYR)</b>
+      <div class="mb-2">{{name.price}}</div>
+      
+      <b>Requirements</b>
+      <div class="mb-2">{{name.requirements}}</div>
+      
+      <b>Package Includes</b>
+      <div class="mb-2">
+        <ol>
+          {% for line in name.includes.split("\n") %}
+            <li>{{line}}</li>
+          {% endfor %}
+        </ol>
+      </div>
+      
+      <b>Package Excludes</b>
+      <div class="mb-2">
+        <ul>
+          {% for line in name.excludes.split("\n") %}
+            <li>{{line}}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      
+      <b>Terms & Conditions</b>
+      <div class="mb-2">{{name.notes}}</div>
 
     </div>
-    
+    {% include 'footer.html' %}
   </body>
 </html>
