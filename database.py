@@ -28,7 +28,8 @@ def load_tour_from_db(id):
       #return dict(rows[0])
       return rows[0]._asdict()
 
-          
+ def add_booking_form_to_db(tour_id, booking ):
+   
 
 
 
