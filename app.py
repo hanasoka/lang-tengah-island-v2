@@ -27,6 +27,12 @@ def show_tour(id):
                          tour=tour,
                          name="Experience Lang Tengah")
 
+@app.route("/api/tour/<id>")
+def show_tour_json(id):
+  tour = load_tour_from_db(id)
+  if not tour:
+    return "Not Found", 404
+  return jsonify(tour)
 
 @app.route("/tour/<id>/book", methods=["post"])
 def book_tour(id):
