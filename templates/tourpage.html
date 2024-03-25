@@ -20,15 +20,20 @@
       <p>{{tour.requirements}}</p>
       <h4>Package Includes</h4>
       <ol>
-        {% for line in tour.includes.split("\n") %}
-          <li>{{line}}</li>
-        {% endfor %}
+        {% if tour.includes %}
+          {% for line in tour.includes.split("\n") %}
+            <li>{{line}}</li>
+          {% endfor %}
+        {% endif %}
+
       </ol>
       <h4>Package Excludes</h4>
       <ul>
-        {% for line in tour.excludes.split("\n") %}
-          <li>{{line}}</li>
-        {% endfor %}
+        {% if tour.excludes %}
+          {% for line in tour.excludes.split("\n") %}
+            <li>{{line}}</li>
+          {% endfor %}
+        {% endif %}
       </ul>
       <h4>Terms & Conditions</h4>
       <p>{{tour.notes}}</p>
