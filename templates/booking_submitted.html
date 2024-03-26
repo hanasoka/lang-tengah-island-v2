@@ -50,18 +50,22 @@
       <b>Package Includes</b>
       <div class="mb-2">
         <ol>
-          {% for line in name.includes.split("\n") %}
-            <li>{{line}}</li>
-          {% endfor %}
+          {% if name.includes %}
+            {% for line in name.includes.split("\n") %}
+              <li>{{line}}</li>
+            {% endfor %}
+          {% endif %}
         </ol>
       </div>
       
       <b>Package Excludes</b>
       <div class="mb-2">
         <ul>
-          {% for line in name.excludes.split("\n") %}
-            <li>{{line}}</li>
-          {% endfor %}
+          {% if name.excludes %}
+            {% for line in name.excludes.split("\n") %}
+              <li>{{line}}</li>
+            {% endfor %}
+          {% endif %}
         </ul>
       </div>
       
